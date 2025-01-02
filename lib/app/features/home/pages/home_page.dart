@@ -1,4 +1,4 @@
-import 'package:counter_sem_bloc/app/bloc/counter_state.dart';
+import 'package:counter_sem_bloc/app/features/home/bloc/counter_state.dart';
 import 'package:flutter/material.dart';
 
 import '../bloc/counter_bloc.dart';

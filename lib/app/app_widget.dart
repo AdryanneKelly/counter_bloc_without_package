@@ -1,4 +1,4 @@
-import 'package:counter_sem_bloc/app/pages/home_page.dart';
+import 'package:counter_sem_bloc/app/features/home/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
