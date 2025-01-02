@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Contador BLoC - Sem Package'),
+        title: const Text('Contador BLoC - Sem Package', style: TextStyle(color: Colors.white, fontSize: 16)),
       ),
       body: Center(
         child: StreamBuilder<CounterState>(
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 20),
                 Text(
                   '${snapshot.data?.counterValue}', // Exibe o valor atual do contador.
-                  style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
                 ),
               ],
             );
