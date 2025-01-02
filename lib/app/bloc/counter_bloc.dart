@@ -1,7 +1,6 @@
 import 'dart:async';
-
-import 'counter_event.dart';
-import 'counter_state.dart';
+import 'counter_event.dart'; 
+import 'counter_state.dart'; 
 
 class CounterBloc {
   final _stateController = StreamController<CounterState>(); // Controlador para o estado do contador.
@@ -13,25 +12,26 @@ class CounterBloc {
     // Escuta os eventos e processa as mudanças de estado.
     _eventController.stream.listen(_mapEventToState);
     // Adiciona o estado inicial ao fluxo.
-    _stateController.add(CounterInitial(_counter));
+    _stateController.add(CounterState(_counter));
   }
-
-  Stream<CounterState> get state => _stateController.stream; // Saída do estado do contador.
+  
+  // Saída do estado do contador.
+  Stream<CounterState> get state => _stateController.stream; 
 
   // Método para adicionar o evento de incremento.
   void increment() {
     _eventController.sink.add(IncrementEvent());
   }
 
-  // Verifica o evento e atualiza o estado do contador.
+  // Identifica o evento e atualiza o estado do contador.
   void _mapEventToState(CounterEvent event) {
     if (event is IncrementEvent) {
       _counter++;
-      _stateController.add(CounterValue(_counter));
+      _stateController.add(CounterState(_counter));
     }
   }
 
-  // Libera recursos ao descartar a página.
+  // Fecha os controladores ao descartar a página para liberar recursos.
   void dispose() {
     _stateController.close();
     _eventController.close();
